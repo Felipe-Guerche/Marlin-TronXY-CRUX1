@@ -43,8 +43,8 @@
 // EEPROM
 //
 #if NO_EEPROM_SELECTED
-  #define I2C_EEPROM
-  //#define FLASH_EEPROM_EMULATION
+  //#define I2C_EEPROM
+  #define FLASH_EEPROM_EMULATION
   #undef NO_EEPROM_SELECTED
 #endif
 
