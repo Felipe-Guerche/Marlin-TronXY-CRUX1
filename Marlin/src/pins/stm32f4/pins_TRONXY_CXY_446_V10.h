@@ -71,7 +71,7 @@
 //
 // SD Card / Flash Drive
 //
-//#define HAS_OTG_USB_HOST_SUPPORT  // USB Flash Drive Support
+#define HAS_OTG_USB_HOST_SUPPORT  // USB Flash Drive Support - Enable native USB OTG Host
 
 //
 // SD Card
