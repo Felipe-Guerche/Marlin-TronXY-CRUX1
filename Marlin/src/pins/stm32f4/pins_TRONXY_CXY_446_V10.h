@@ -156,7 +156,13 @@
 #define FAN1_PIN                            PB6   // Part Cooling Fan #2
 #define FAN2_PIN                            PG9   // Extruder/Hotend #1 Heatsink Fan
 #define FAN3_PIN                            PF10  // Extruder/Hotend #2 Heatsink Fan
-#define CONTROLLER_FAN_PIN                  PD7
+
+// Hotend Auto Fan (standard Marlin way)
+#ifndef E0_AUTO_FAN_PIN
+  #define E0_AUTO_FAN_PIN                   FAN2_PIN  // Auto fan for hotend cooling
+#endif
+
+#define CONTROLLER_FAN_PIN                  PD7   // Board fan
 
 //
 // Laser / Servos
@@ -242,12 +248,11 @@
 #endif
 
 //
-// Power Loss
+// Power Loss Detection
 //
-#if ENABLED(PSU_CONTROL)
-  #define PS_ON_PIN                         PG10
-  #define POWER_LOSS_PIN                    PE1
-#endif
+#define PS_ON_PIN                           PG10  // Power supply control (LED simulation)
+#define POWER_LOSS_PIN                      PE1   // Power loss detection (LM393 comparator output)
+#define POWER_LM393_PIN                     PE0   // LM393 comparator positive input (must be HIGH)
 
 //
 // Misc. Functions
